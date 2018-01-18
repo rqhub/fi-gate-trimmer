@@ -534,7 +534,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 // RKL #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 800, 800, 800, 800 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 800, 800, 800, 88.888888889 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -543,7 +543,7 @@
  */
 //RKL #define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
 //#define DEFAULT_MAX_FEEDRATE          { 9999, 9999, 9999, 9999 }
-#define DEFAULT_MAX_FEEDRATE          { 800, 800, 800, 1000 }
+#define DEFAULT_MAX_FEEDRATE          { 2000, 2000, 2000, 1000 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -552,7 +552,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 //RKL #define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
-#define DEFAULT_MAX_ACCELERATION      { 600, 600, 600, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 1000, 1000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -562,9 +562,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  2000    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -577,7 +577,7 @@
 #define DEFAULT_XJERK                 20.0
 #define DEFAULT_YJERK                 20.0
 #define DEFAULT_ZJERK                  0.4
-#define DEFAULT_EJERK                  5.0
+#define DEFAULT_EJERK                  1.0 // was 5
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -755,7 +755,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
+#define INVERT_X_DIR true // RKK#2
 #define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
 
@@ -787,8 +787,8 @@
 // @section machine
 
 // The size of the print bed // RKL
-#define X_BED_SIZE 300
-#define Y_BED_SIZE 300
+#define X_BED_SIZE 150
+#define Y_BED_SIZE 100
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 // RKL #define X_MIN_POS 0
@@ -1016,7 +1016,7 @@
 // RKL #define HOMING_FEEDRATE_XY (50*60)
 #define HOMING_FEEDRATE_XY 1000
 // RKL #define HOMING_FEEDRATE_Z  (4*60)
-#define HOMING_FEEDRATE_Z  1000
+#define HOMING_FEEDRATE_Z  1700
 
 //=============================================================================
 //============================= Additional Features ===========================
@@ -1246,7 +1246,7 @@
  * you must uncomment the following option or it won't work.
  *
  */
-//#define SDSUPPORT
+#define SDSUPPORT
 
 /**
  * SD CARD: SPI SPEED
@@ -1398,7 +1398,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // MakerLab Mini Panel with graphic
